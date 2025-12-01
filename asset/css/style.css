@@ -28,6 +28,7 @@ body {
 a {
     text-decoration: none;
 }
+
 .btn {
     display: inline-block;
     min-width: 98px;
@@ -82,10 +83,27 @@ a {
     align-items: center;
 }
 .navbar ul a {
+    position: relative;
     font-size: 1.4rem;
     color: #4f5361;
     padding: 8px 14px;
 }
+
+.navbar ul a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* khoảng cách dưới chữ */
+    width: 0%; /* bắt đầu từ 0 */
+    height: 2px; /* độ dày gạch */
+    background: #4f5361; /* màu gạch */
+    transition: width 0.3s ease;
+}
+
+.navbar ul a:hover::after {
+    width: 100%;
+}
+
 .navbar .active-link {
     font-size: 1.4rem;
     color: var(--primary-color);
